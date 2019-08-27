@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Data;
 
-namespace LMS_OC
+namespace LMS_OC.Data_Access_Layer
 {
     class ConnectionManager
     {

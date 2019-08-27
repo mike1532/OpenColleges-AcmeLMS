@@ -6,8 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using LMS_OC.Data_Access_Layer;
+using LMS_OC.Business_Logic_Layer;
 
-namespace LMS_OC
+namespace LMS_OC.Presentation_Layer
 {
     public partial class EditBookForm : Form
     {

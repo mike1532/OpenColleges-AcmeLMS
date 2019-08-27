@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using LMS_OC.Presentation_Layer;
+using LMS_OC.Data_Access_Layer;
 
-namespace LMS_OC
+namespace LMS_OC.Presentation_Layer
 {
     public partial class MainForm : Form
     {
@@ -99,7 +99,7 @@ namespace LMS_OC
         {
             if (this.ActiveMdiChild != null)
                 this.ActiveMdiChild.Close();
-            ViewStudents viewStudents = new ViewStudents();
+            frmViewStudents viewStudents = new frmViewStudents();
             viewStudents.Show();
             viewStudents.MdiParent = this;
 
@@ -143,6 +143,24 @@ namespace LMS_OC
             frm.MdiParent = this;
         }
 
+        private void viewBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+                this.ActiveMdiChild.Close();
+            frmViewBooks viewBooks = new frmViewBooks();
+            viewBooks.Show();
+            viewBooks.MdiParent = this;
+        }
+
+        private void searchBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+                ActiveMdiChild.Close();
+            frmSearchBooks searchBooks = new frmSearchBooks();
+            searchBooks.Show();
+            searchBooks.MdiParent = this;
+        }
+
         //EXIT 
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -155,6 +173,16 @@ namespace LMS_OC
         {
             this.Text = this.Text + "           " + System.Environment.GetEnvironmentVariable("librarianName") + " logged in.";
             
+        }
+
+        //Librarian menu
+        private void librarianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+                this.ActiveMdiChild.Close();
+            frmViewLibrarian viewLibrarian = new frmViewLibrarian();
+            viewLibrarian.Show();
+            viewLibrarian.MdiParent = this;
         }
 
       

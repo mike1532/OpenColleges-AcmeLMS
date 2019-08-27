@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LMS_OC.Data_Access_Layer;
 
 namespace LMS_OC.Presentation_Layer
 {
-    public partial class ViewStudents : Form
+    public partial class frmViewStudents : Form
     {
-        public ViewStudents()
+        public frmViewStudents()
         {
             InitializeComponent();
         }

@@ -1,4 +1,4 @@
-﻿namespace LMS_OC
+﻿namespace LMS_OC.Presentation_Layer
 {
     partial class LoginForm
     {
