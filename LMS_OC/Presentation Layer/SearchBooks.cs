@@ -86,9 +86,9 @@ namespace LMS_OC.Presentation_Layer
             //Search by title
             if (rbTitle.Checked == true)
             {
-                if (txtSearch.Text == "")
+                if (String.IsNullOrEmpty(txtSearch.Text)) 
                 {
-                    MessageBox.Show("Please enter a book title", "Enter Title", MessageBoxButtons.OK,
+                    MessageBox.Show("Please enter a book title", "Search by Title", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     gbResults.Visible = false;
                     btnSearch.Visible = true;
@@ -98,7 +98,7 @@ namespace LMS_OC.Presentation_Layer
                 else
                 {
                     GlobalVariable.bookSearchCriteria = "WHERE title LIKE '%" + txtSearch.Text + "%'";
-                    btnSearch.Visible = false;
+                    btnSearch.Visible = true;
                     gbResults.Visible = true;
                     lvResults.Items.Clear();
                     DisplayResults();
@@ -106,6 +106,22 @@ namespace LMS_OC.Presentation_Layer
             }
             else if (rbAuthor.Checked == true)
             {
+                if (String.IsNullOrEmpty(cbAuthor.Text))
+                {
+                    MessageBox.Show("Please select an Author.", "Search by Author", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    gbResults.Visible = true;
+                    btnSearch.Visible = true;
+                    return;
+                }
+                else
+                {
+                    GlobalVariable.bookSearchCriteria = "WHERE authorName LIKE '%" + cbAuthor.Text + "%'";
+                    btnSearch.Visible = true;
+                    gbResults.Visible = true;
+                    lvResults.Items.Clear();
+                    DisplayResults();
+                }
 
             }
 

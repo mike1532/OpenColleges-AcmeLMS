@@ -34,7 +34,6 @@
             this.rbAuthor = new System.Windows.Forms.RadioButton();
             this.cbAuthor = new System.Windows.Forms.ComboBox();
             this.gbResults = new System.Windows.Forms.GroupBox();
-            this.btnSearchAgain = new System.Windows.Forms.Button();
             this.lvResults = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -79,7 +78,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(239, 110);
+            this.txtSearch.Location = new System.Drawing.Point(136, 124);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(287, 27);
             this.txtSearch.TabIndex = 19;
@@ -101,7 +100,7 @@
             this.cbAuthor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAuthor.FormattingEnabled = true;
-            this.cbAuthor.Location = new System.Drawing.Point(239, 130);
+            this.cbAuthor.Location = new System.Drawing.Point(136, 136);
             this.cbAuthor.Name = "cbAuthor";
             this.cbAuthor.Size = new System.Drawing.Size(287, 28);
             this.cbAuthor.TabIndex = 21;
@@ -109,7 +108,6 @@
             // 
             // gbResults
             // 
-            this.gbResults.Controls.Add(this.btnSearchAgain);
             this.gbResults.Controls.Add(this.lvResults);
             this.gbResults.Controls.Add(this.btnReserve);
             this.gbResults.Controls.Add(this.btnClose);
@@ -121,18 +119,6 @@
             this.gbResults.TabStop = false;
             this.gbResults.Text = "Search Results";
             this.gbResults.Visible = false;
-            // 
-            // btnSearchAgain
-            // 
-            this.btnSearchAgain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchAgain.Location = new System.Drawing.Point(511, 414);
-            this.btnSearchAgain.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSearchAgain.Name = "btnSearchAgain";
-            this.btnSearchAgain.Size = new System.Drawing.Size(144, 43);
-            this.btnSearchAgain.TabIndex = 22;
-            this.btnSearchAgain.Text = "Search &Again";
-            this.btnSearchAgain.UseVisualStyleBackColor = true;
-            this.btnSearchAgain.Click += new System.EventHandler(this.btnSearchAgain_Click);
             // 
             // lvResults
             // 
@@ -189,7 +175,7 @@
             // btnReserve
             // 
             this.btnReserve.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReserve.Location = new System.Drawing.Point(112, 414);
+            this.btnReserve.Location = new System.Drawing.Point(195, 414);
             this.btnReserve.Margin = new System.Windows.Forms.Padding(4);
             this.btnReserve.Name = "btnReserve";
             this.btnReserve.Size = new System.Drawing.Size(144, 43);
@@ -201,7 +187,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(310, 414);
+            this.btnClose.Location = new System.Drawing.Point(393, 414);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(144, 43);
@@ -214,7 +200,7 @@
             // 
             this.lbAuthor.FormattingEnabled = true;
             this.lbAuthor.ItemHeight = 16;
-            this.lbAuthor.Location = new System.Drawing.Point(585, 138);
+            this.lbAuthor.Location = new System.Drawing.Point(429, 139);
             this.lbAuthor.Name = "lbAuthor";
             this.lbAuthor.Size = new System.Drawing.Size(20, 20);
             this.lbAuthor.TabIndex = 23;
@@ -223,7 +209,7 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(310, 165);
+            this.btnSearch.Location = new System.Drawing.Point(471, 116);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(144, 43);
@@ -274,6 +260,5 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.Button btnSearchAgain;
     }
 }
