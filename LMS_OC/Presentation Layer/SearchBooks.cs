@@ -124,8 +124,6 @@ namespace LMS_OC.Presentation_Layer
                 }
 
             }
-
-
         }
 
         private void btnSearchAgain_Click(object sender, EventArgs e)
@@ -142,10 +140,8 @@ namespace LMS_OC.Presentation_Layer
             string searchQuery = "SELECT Book.bookID, Author.authorName, Book.title, Book.ISBN, Book.rackNo," +
                 "Book.noOfAvailableBooks, Book.noOfBorrowedBooks, Book.price, Book.librarianID FROM Book " +
                 "INNER JOIN Author ON Book.authorID = Author.authorID";
-
            
             searchQuery = searchQuery + " " + GlobalVariable.bookSearchCriteria;
-
             SqlConnection connection = ConnectionManager.DBConnection();
 
             try

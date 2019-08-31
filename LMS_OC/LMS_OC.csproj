@@ -65,6 +65,12 @@
     </Compile>
     <Compile Include="Business Logic Layer\Book.cs" />
     <Compile Include="Data Access Layer\ConnectionManager.cs" />
+    <Compile Include="Presentation Layer\BorrowBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\BorrowBook.designer.cs">
+      <DependentUpon>BorrowBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\EditBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,12 @@
     </Compile>
     <Compile Include="Presentation Layer\ViewBooks.Designer.cs">
       <DependentUpon>ViewBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\ViewIBookIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\ViewIBookIssue.Designer.cs">
+      <DependentUpon>ViewIBookIssue.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\ViewLibrarian.cs">
       <SubType>Form</SubType>
@@ -122,6 +134,9 @@
     <EmbeddedResource Include="Presentation Layer\AddStudentForm.resx">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\BorrowBook.resx">
+      <DependentUpon>BorrowBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\EditBookForm.resx">
       <DependentUpon>EditBookForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\ViewBooks.resx">
       <DependentUpon>ViewBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\ViewIBookIssue.resx">
+      <DependentUpon>ViewIBookIssue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\ViewLibrarian.resx">
       <DependentUpon>ViewLibrarian.cs</DependentUpon>

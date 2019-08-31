@@ -10,19 +10,19 @@ namespace LMS_OC.Business_Logic_Layer
 {
     class Book
     {
-        int bookID;
-        string ISBN;
-        string title;
-        string authorName;
-        int authorID;
-        double price;
-        string rackNo;
-        int availableBooks;
-        int borrowedBooks;
-        int librarianID;
+        private int bookID;
+        private string ISBN;
+        private string title;
+        private string authorName;
+        private int authorID;
+        private double price;
+        private string rackNo;
+        private int availableBooks;
+        private int borrowedBooks;
+        private int librarianID;
 
+        //constructors
         public Book() { }
-
         public Book(string isbn, string name, string authName, double cost, string rNo, int availBooks, int bBooks, int lID)
         {
             ISBN = isbn;
@@ -34,7 +34,6 @@ namespace LMS_OC.Business_Logic_Layer
             borrowedBooks = bBooks;
             librarianID = lID;
         }
-
         public Book(string isbn, string name, int authorID, double cost, string rNo, int avilbooks, int bBooks,int lID)
         {
             //this.bookID = bID;
@@ -47,6 +46,8 @@ namespace LMS_OC.Business_Logic_Layer
             this.borrowedBooks = bBooks;
             this.librarianID = lID;
         }
+        
+
         public int BookID
         {
             get { return bookID; }
@@ -87,19 +88,18 @@ namespace LMS_OC.Business_Logic_Layer
             get { return borrowedBooks; }
             set { borrowedBooks = value; }
         }
-
         public string AuthourName
         {
             get { return authorName; }
             set { authorName = value; }
         }
-
         public int LibrarianID
         {
             get { return librarianID; }
             set { librarianID = value; }
         }
 
+        
        public int AddNewBook()
         {
             SqlConnection con = ConnectionManager.DBConnection();

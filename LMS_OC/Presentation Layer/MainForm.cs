@@ -171,8 +171,7 @@ namespace LMS_OC.Presentation_Layer
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.Text = this.Text + "           " + System.Environment.GetEnvironmentVariable("librarianName") + " logged in.";
-            
+            this.Text = this.Text + "           " + System.Environment.GetEnvironmentVariable("librarianName") + " logged in.";            
         }
 
         //Librarian menu
@@ -185,6 +184,22 @@ namespace LMS_OC.Presentation_Layer
             viewLibrarian.MdiParent = this;
         }
 
-      
+        private void borrowBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+                ActiveMdiChild.Close();
+            frmBorrowBook borrowBook = new frmBorrowBook();
+            borrowBook.Show();
+            borrowBook.MdiParent = this;
+        }
+
+        private void viewBookIssueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+                ActiveMdiChild.Close();
+            frmViewIBookIssue bookIssue = new frmViewIBookIssue();
+            bookIssue.Show();
+            bookIssue.MdiParent = this;
+        }
     }
 }
