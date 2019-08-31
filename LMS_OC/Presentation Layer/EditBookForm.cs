@@ -63,7 +63,7 @@ namespace LMS_OC.Presentation_Layer
             Book bookToEdit = new Book();
             bookToEdit.BookID =int.Parse( txtBookID.Text);
             bookToEdit.BookTitle = txtBookTitle.Text;
-            bookToEdit.BookAuthorID = int.Parse(lstAuthor.SelectedValue.ToString());
+            bookToEdit.BookAuthor = int.Parse(lstAuthor.SelectedValue.ToString());
             bookToEdit.BookPrice =double.Parse( txtPrice.Text);
             bookToEdit.RackNumber = txtRackNo.Text;
             bookToEdit.AvailableBooks =int.Parse( txtCopies.Text);

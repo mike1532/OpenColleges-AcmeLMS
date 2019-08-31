@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GlobalVariable.cs" />
     <Compile Include="Presentation Layer\AddBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
