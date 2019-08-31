@@ -13,6 +13,7 @@ namespace LMS_OC.Business_Logic_Layer
         int bookID;
         string ISBN;
         string title;
+        string authorName;
         int authorID;
         double price;
         string rackNo;
@@ -22,11 +23,24 @@ namespace LMS_OC.Business_Logic_Layer
 
         public Book() { }
 
-        public Book(string isbn, string name, int aID, double cost, string rNo, int avilbooks, int bBooks,int lID)
+        public Book(string isbn, string name, string authName, double cost, string rNo, int availBooks, int bBooks, int lID)
         {
+            ISBN = isbn;
+            title = name;
+            authorName = authName;
+            price = cost;
+            rackNo = rNo;
+            availableBooks = availBooks;
+            borrowedBooks = bBooks;
+            librarianID = lID;
+        }
+
+        public Book(string isbn, string name, int authorID, double cost, string rNo, int avilbooks, int bBooks,int lID)
+        {
+            //this.bookID = bID;
             this.ISBN = isbn;
             this.title = name;
-            this.authorID = aID;
+            this.authorID = authorID;
             this.price = cost;
             this.rackNo = rNo;
             this.availableBooks = avilbooks;
@@ -48,7 +62,7 @@ namespace LMS_OC.Business_Logic_Layer
             get { return title; }
             set { title = value; }
         }
-        public int BookAuthorID
+        public int BookAuthor
         {
             get { return authorID; }
             set { authorID = value; }
@@ -74,13 +88,19 @@ namespace LMS_OC.Business_Logic_Layer
             set { borrowedBooks = value; }
         }
 
+        public string AuthourName
+        {
+            get { return authorName; }
+            set { authorName = value; }
+        }
+
         public int LibrarianID
         {
             get { return librarianID; }
             set { librarianID = value; }
         }
 
-        public int AddNewBook()
+       public int AddNewBook()
         {
             SqlConnection con = ConnectionManager.DBConnection();
             SqlCommand cmd = new SqlCommand();

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LMS_OC.Data_Access_Layer;
+using LMS_OC.Business_Logic_Layer;
 using System.Data.SqlClient;
 
 
@@ -82,16 +83,105 @@ namespace LMS_OC.Presentation_Layer
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //When clicked button disappears and results box appears
-            btnSearch.Visible = false;
-            gbResults.Visible = true;
-
+            //Search by title
             if (rbTitle.Checked == true)
             {
+                if (String.IsNullOrEmpty(txtSearch.Text)) 
+                {
+                    MessageBox.Show("Please enter a book title", "Search by Title", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    gbResults.Visible = false;
+                    btnSearch.Visible = true;
+                    return;
+                }
 
+                else
+                {
+                    GlobalVariable.bookSearchCriteria = "WHERE title LIKE '%" + txtSearch.Text + "%'";
+                    btnSearch.Visible = true;
+                    gbResults.Visible = true;
+                    lvResults.Items.Clear();
+                    DisplayResults();
+                }                                
+            }
+            else if (rbAuthor.Checked == true)
+            {
+                if (String.IsNullOrEmpty(cbAuthor.Text))
+                {
+                    MessageBox.Show("Please select an Author.", "Search by Author", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    gbResults.Visible = true;
+                    btnSearch.Visible = true;
+                    return;
+                }
+                else
+                {
+                    GlobalVariable.bookSearchCriteria = "WHERE authorName LIKE '%" + cbAuthor.Text + "%'";
+                    btnSearch.Visible = true;
+                    gbResults.Visible = true;
+                    lvResults.Items.Clear();
+                    DisplayResults();
+                }
+
+            }
+
+
+        }
+
+        private void btnSearchAgain_Click(object sender, EventArgs e)
+        {
+            gbResults.Visible = false;
+            btnSearch.Visible = true;
+            txtSearch.Clear();
+            lvResults.Items.Clear();
+        }
+
+
+        public void DisplayResults()
+        {
+            string searchQuery = "SELECT Book.bookID, Author.authorName, Book.title, Book.ISBN, Book.rackNo," +
+                "Book.noOfAvailableBooks, Book.noOfBorrowedBooks, Book.price, Book.librarianID FROM Book " +
+                "INNER JOIN Author ON Book.authorID = Author.authorID";
+
+           
+            searchQuery = searchQuery + " " + GlobalVariable.bookSearchCriteria;
+
+            SqlConnection connection = ConnectionManager.DBConnection();
+
+            try
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(searchQuery, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Book book = new Book(reader["ISBN"].ToString(), reader["title"].ToString(),
+                            reader["authorName"].ToString(), double.Parse(reader["price"].ToString()), reader["rackNo"].ToString(),
+                            int.Parse(reader["noOfAvailableBooks"].ToString()), int.Parse(reader["noOfBorrowedBooks"].ToString()),
+                            int.Parse(reader["librarianID"].ToString()));
+
+                    ListViewItem listView = new ListViewItem("");
+                    listView.SubItems.Add(book.BookTitle);
+                    listView.SubItems.Add(book.AuthourName);
+                    listView.SubItems.Add(book.BookISBN);
+                    listView.SubItems.Add(book.AvailableBooks.ToString());
+                    listView.SubItems.Add(book.RackNumber);
+
+                    lvResults.Items.Add(listView);
+                }
+                if (reader != null)
+                    reader.Close();
+                connection.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unsuccessful" + ex);
             }
         }
 
-       
-    }
+        
+    }      
 }
+
