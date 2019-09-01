@@ -39,12 +39,15 @@
             this.viewBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.borrowBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.librarianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.searchBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewPagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewBookIssueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +59,8 @@
             this.newStudentEntryToolStripMenuItem,
             this.bookMasterToolStripMenuItem,
             this.librarianToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.viewPagesToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(9, 2, 0, 2);
@@ -102,7 +106,8 @@
             this.viewBooksToolStripMenuItem,
             this.newBookToolStripMenuItem,
             this.editBookToolStripMenuItem,
-            this.searchBooksToolStripMenuItem});
+            this.searchBooksToolStripMenuItem,
+            this.borrowBookToolStripMenuItem});
             this.bookMasterToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.bookMasterToolStripMenuItem.Name = "bookMasterToolStripMenuItem";
             this.bookMasterToolStripMenuItem.Size = new System.Drawing.Size(117, 27);
@@ -128,6 +133,20 @@
             this.editBookToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
             this.editBookToolStripMenuItem.Text = "Edit Book";
             this.editBookToolStripMenuItem.Click += new System.EventHandler(this.editBookToolStripMenuItem_Click);
+            // 
+            // searchBooksToolStripMenuItem
+            // 
+            this.searchBooksToolStripMenuItem.Name = "searchBooksToolStripMenuItem";
+            this.searchBooksToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
+            this.searchBooksToolStripMenuItem.Text = "Search Books";
+            this.searchBooksToolStripMenuItem.Click += new System.EventHandler(this.searchBooksToolStripMenuItem_Click);
+            // 
+            // borrowBookToolStripMenuItem
+            // 
+            this.borrowBookToolStripMenuItem.Name = "borrowBookToolStripMenuItem";
+            this.borrowBookToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
+            this.borrowBookToolStripMenuItem.Text = "Borrow Book";
+            this.borrowBookToolStripMenuItem.Click += new System.EventHandler(this.borrowBookToolStripMenuItem_Click);
             // 
             // librarianToolStripMenuItem
             // 
@@ -163,12 +182,20 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // searchBooksToolStripMenuItem
+            // viewPagesToolStripMenuItem
             // 
-            this.searchBooksToolStripMenuItem.Name = "searchBooksToolStripMenuItem";
-            this.searchBooksToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
-            this.searchBooksToolStripMenuItem.Text = "Search Books";
-            this.searchBooksToolStripMenuItem.Click += new System.EventHandler(this.searchBooksToolStripMenuItem_Click);
+            this.viewPagesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewBookIssueToolStripMenuItem});
+            this.viewPagesToolStripMenuItem.Name = "viewPagesToolStripMenuItem";
+            this.viewPagesToolStripMenuItem.Size = new System.Drawing.Size(97, 27);
+            this.viewPagesToolStripMenuItem.Text = "View pages";
+            // 
+            // viewBookIssueToolStripMenuItem
+            // 
+            this.viewBookIssueToolStripMenuItem.Name = "viewBookIssueToolStripMenuItem";
+            this.viewBookIssueToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.viewBookIssueToolStripMenuItem.Text = "view book issue";
+            this.viewBookIssueToolStripMenuItem.Click += new System.EventHandler(this.viewBookIssueToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -213,6 +240,9 @@
         private System.Windows.Forms.ToolStripMenuItem librarianToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewBooksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchBooksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem borrowBookToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewPagesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewBookIssueToolStripMenuItem;
     }
 }
 
