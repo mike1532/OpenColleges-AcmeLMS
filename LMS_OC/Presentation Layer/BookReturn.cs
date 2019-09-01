@@ -7,39 +7,48 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LMS_OC.Business_Logic_Layer;
 using LMS_OC.Data_Access_Layer;
+using LMS_OC.Business_Logic_Layer;
 using System.Data.SqlClient;
 
 namespace LMS_OC.Presentation_Layer
 {
-    public partial class frmBorrowBook : Form
+    public partial class frmBookReturn : Form
     {
-        public frmBorrowBook()
+        public frmBookReturn()
         {
             InitializeComponent();
         }
 
-        
-
         //events
-        private void frmBorrowBook_Load(object sender, EventArgs e)
+        private void frmBookReturn_Load(object sender, EventArgs e)
         {
             txtLibrarianID.Text = System.Environment.GetEnvironmentVariable("librarianID");
         }
         private void txtBookID_Leave(object sender, EventArgs e)
         {
-           if (CheckBookID() == true)
-                DisplayBookName();  
+            if (CheckBookID() == true)
+                DisplayBookName();
         }
         private void txtStudentID_Leave(object sender, EventArgs e)
         {
             if (CheckStudentID() == true)
                 DisplayStudentName();
         }
-        private void dateTimePickerDateOfIssue_Leave(object sender, EventArgs e)
+
+        //buttons
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            SetReturnDate();
+            Close();
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtBookID.Clear();
+            txtBookTitle.Clear();
+            txtDateofIssue.Clear();
+            txtStudentName.Clear();
+            txtStudentID.Clear();
+            dateTimePickerReturnDate.Value = DateTime.Now;
         }
 
         //methods
@@ -94,11 +103,7 @@ namespace LMS_OC.Presentation_Layer
             {
                 MessageBox.Show("Unsuccessful " + ex);
             }
-        }
-        public void SetReturnDate()
-        {
-            txtReturnDate.Text = dateTimePickerDateOfIssue.Value.AddDays(7).ToString("ddd d MMM yyyy"); 
-        }
+        }       
         public bool CheckBookID()
         {
             if (String.IsNullOrEmpty(txtBookID.Text))
@@ -130,65 +135,8 @@ namespace LMS_OC.Presentation_Layer
                 return false;
             }
             return true;
-        }    
-
-        //buttons
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Close();
         }
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            txtBookID.Clear();
-            txtBookTitle.Clear();
-            txtReturnDate.Clear();
-            txtStudentName.Clear();
-            txtStudentID.Clear();
-            dateTimePickerDateOfIssue.Value = DateTime.Now;
-        }
-        private void btnConfirm_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(txtReturnDate.Text))
-            {
-                MessageBox.Show("Return date not selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            
-            try
-            {               
 
-                string addQuery = "sp_BookIssue_BorrowBook";
-                string update = "UPDATE Book SET noOfAvailableBooks = noOfAvailableBooks - 1, noOfBorrowedBooks = noOfBorrowedBooks + 1 WHERE bookID = '" + txtBookID.Text + "'";
-                SqlConnection connection = ConnectionManager.DBConnection();
-                SqlCommand command = new SqlCommand(addQuery, connection);
-                SqlCommand command1 = new SqlCommand(update, connection);
-                command.CommandType = CommandType.StoredProcedure;
-
-                command.Parameters.AddWithValue("@BookID", int.Parse(txtBookID.Text));
-                command.Parameters.AddWithValue("@StudentID", int.Parse(txtStudentID.Text));
-                command.Parameters.AddWithValue("@IssueDate", dateTimePickerDateOfIssue.Value);
-                command.Parameters.AddWithValue("@ReturnDate", DateTime.Parse(txtReturnDate.Text));
-                command.Parameters.AddWithValue("@LibrarianID", int.Parse(txtLibrarianID.Text));
-                command.Parameters.AddWithValue("NewIssueID", SqlDbType.Int).Direction = ParameterDirection.Output;
-
-                connection.Open();
-                command.Transaction = connection.BeginTransaction();
-                command.ExecuteNonQuery();
-                command.Transaction.Commit();
-
-                command1.Transaction = connection.BeginTransaction();
-                command1.ExecuteNonQuery();
-                command1.Transaction.Commit();
-
-                connection.Close();
-                Close();                
-
-                MessageBox.Show("Success", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("unsuccessful " + ex);
-            }
-        }
+        
     }
 }
