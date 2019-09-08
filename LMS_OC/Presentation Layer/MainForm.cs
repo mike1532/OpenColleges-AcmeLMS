@@ -201,5 +201,14 @@ namespace LMS_OC.Presentation_Layer
             bookIssue.Show();
             bookIssue.MdiParent = this;
         }
+
+        private void returnBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+                ActiveMdiChild.Close();
+            frmBookReturn bookReturn = new frmBookReturn();
+            bookReturn.Show();
+            bookReturn.MdiParent = this;
+        }
     }
 }

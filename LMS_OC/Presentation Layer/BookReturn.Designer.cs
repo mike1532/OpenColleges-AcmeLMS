@@ -29,27 +29,32 @@
         private void InitializeComponent()
         {
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtLibrarianID = new System.Windows.Forms.TextBox();
-            this.dateTimePickerReturnDate = new System.Windows.Forms.DateTimePicker();
-            this.txtDateofIssue = new System.Windows.Forms.TextBox();
-            this.txtStudentName = new System.Windows.Forms.TextBox();
-            this.txtBookTitle = new System.Windows.Forms.TextBox();
-            this.gbOffice = new System.Windows.Forms.GroupBox();
-            this.lblLibrarianID = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.gbDetails = new System.Windows.Forms.GroupBox();
-            this.btnReturn = new System.Windows.Forms.Button();
-            this.txtBookID = new System.Windows.Forms.TextBox();
-            this.txtStudentID = new System.Windows.Forms.TextBox();
-            this.lblBookTitle = new System.Windows.Forms.Label();
-            this.lblStudentID = new System.Windows.Forms.Label();
-            this.lblStudentName = new System.Windows.Forms.Label();
-            this.lblDateOfIssue = new System.Windows.Forms.Label();
-            this.lblReturnDate = new System.Windows.Forms.Label();
-            this.lblBookID = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.gbOffice.SuspendLayout();
-            this.gbDetails.SuspendLayout();
+            this.gbEnterDetails = new System.Windows.Forms.GroupBox();
+            this.gbOfficeUse = new System.Windows.Forms.GroupBox();
+            this.lblBookID = new System.Windows.Forms.Label();
+            this.lblStudentID = new System.Windows.Forms.Label();
+            this.lblLibrarianID = new System.Windows.Forms.Label();
+            this.lblIssueID = new System.Windows.Forms.Label();
+            this.txtStudentID = new System.Windows.Forms.TextBox();
+            this.txtBookID = new System.Windows.Forms.TextBox();
+            this.txtLibrarianID = new System.Windows.Forms.TextBox();
+            this.txtIssueID = new System.Windows.Forms.TextBox();
+            this.btnSearchRecords = new System.Windows.Forms.Button();
+            this.gbRecordInfo = new System.Windows.Forms.GroupBox();
+            this.lblStudentName = new System.Windows.Forms.Label();
+            this.lblBookTitle = new System.Windows.Forms.Label();
+            this.lblDateOfIssue = new System.Windows.Forms.Label();
+            this.lblDateReturned = new System.Windows.Forms.Label();
+            this.dateTimePickerReturnDate = new System.Windows.Forms.DateTimePicker();
+            this.lblDisplayName = new System.Windows.Forms.Label();
+            this.lblDisplayTitle = new System.Windows.Forms.Label();
+            this.lblDisplayDateIssued = new System.Windows.Forms.Label();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnSearchAgain = new System.Windows.Forms.Button();
+            this.gbEnterDetails.SuspendLayout();
+            this.gbOfficeUse.SuspendLayout();
+            this.gbRecordInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -60,222 +65,9 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(144, 43);
             this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "C&lose";
+            this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            // 
-            // txtLibrarianID
-            // 
-            this.txtLibrarianID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLibrarianID.Enabled = false;
-            this.txtLibrarianID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLibrarianID.Location = new System.Drawing.Point(230, 32);
-            this.txtLibrarianID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLibrarianID.Name = "txtLibrarianID";
-            this.txtLibrarianID.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtLibrarianID.Size = new System.Drawing.Size(93, 26);
-            this.txtLibrarianID.TabIndex = 10;
-            this.txtLibrarianID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // dateTimePickerReturnDate
-            // 
-            this.dateTimePickerReturnDate.CustomFormat = "ddd d MMM yyyy";
-            this.dateTimePickerReturnDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerReturnDate.Location = new System.Drawing.Point(206, 141);
-            this.dateTimePickerReturnDate.Name = "dateTimePickerReturnDate";
-            this.dateTimePickerReturnDate.Size = new System.Drawing.Size(253, 27);
-            this.dateTimePickerReturnDate.TabIndex = 16;
-            // 
-            // txtDateofIssue
-            // 
-            this.txtDateofIssue.Enabled = false;
-            this.txtDateofIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDateofIssue.Location = new System.Drawing.Point(206, 177);
-            this.txtDateofIssue.Name = "txtDateofIssue";
-            this.txtDateofIssue.Size = new System.Drawing.Size(253, 27);
-            this.txtDateofIssue.TabIndex = 15;
-            this.txtDateofIssue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtStudentName
-            // 
-            this.txtStudentName.Enabled = false;
-            this.txtStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentName.Location = new System.Drawing.Point(206, 103);
-            this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.Size = new System.Drawing.Size(253, 27);
-            this.txtStudentName.TabIndex = 14;
-            this.txtStudentName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtBookTitle
-            // 
-            this.txtBookTitle.Enabled = false;
-            this.txtBookTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBookTitle.Location = new System.Drawing.Point(114, 67);
-            this.txtBookTitle.Name = "txtBookTitle";
-            this.txtBookTitle.Size = new System.Drawing.Size(345, 27);
-            this.txtBookTitle.TabIndex = 13;
-            // 
-            // gbOffice
-            // 
-            this.gbOffice.Controls.Add(this.lblLibrarianID);
-            this.gbOffice.Controls.Add(this.txtLibrarianID);
-            this.gbOffice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbOffice.Location = new System.Drawing.Point(7, 217);
-            this.gbOffice.Name = "gbOffice";
-            this.gbOffice.Size = new System.Drawing.Size(466, 73);
-            this.gbOffice.TabIndex = 12;
-            this.gbOffice.TabStop = false;
-            this.gbOffice.Text = "Office Use Only";
-            // 
-            // lblLibrarianID
-            // 
-            this.lblLibrarianID.AutoSize = true;
-            this.lblLibrarianID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLibrarianID.Location = new System.Drawing.Point(101, 34);
-            this.lblLibrarianID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblLibrarianID.Name = "lblLibrarianID";
-            this.lblLibrarianID.Size = new System.Drawing.Size(102, 20);
-            this.lblLibrarianID.TabIndex = 9;
-            this.lblLibrarianID.Text = "Librarian ID:";
-            // 
-            // btnClear
-            // 
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(330, 297);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(144, 43);
-            this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "&Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // gbDetails
-            // 
-            this.gbDetails.Controls.Add(this.dateTimePickerReturnDate);
-            this.gbDetails.Controls.Add(this.txtDateofIssue);
-            this.gbDetails.Controls.Add(this.txtStudentName);
-            this.gbDetails.Controls.Add(this.txtBookTitle);
-            this.gbDetails.Controls.Add(this.gbOffice);
-            this.gbDetails.Controls.Add(this.btnClear);
-            this.gbDetails.Controls.Add(this.btnReturn);
-            this.gbDetails.Controls.Add(this.txtBookID);
-            this.gbDetails.Controls.Add(this.txtStudentID);
-            this.gbDetails.Controls.Add(this.lblBookTitle);
-            this.gbDetails.Controls.Add(this.lblStudentID);
-            this.gbDetails.Controls.Add(this.lblStudentName);
-            this.gbDetails.Controls.Add(this.lblDateOfIssue);
-            this.gbDetails.Controls.Add(this.lblReturnDate);
-            this.gbDetails.Controls.Add(this.lblBookID);
-            this.gbDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDetails.Location = new System.Drawing.Point(9, 53);
-            this.gbDetails.Margin = new System.Windows.Forms.Padding(4);
-            this.gbDetails.Name = "gbDetails";
-            this.gbDetails.Padding = new System.Windows.Forms.Padding(4);
-            this.gbDetails.Size = new System.Drawing.Size(485, 348);
-            this.gbDetails.TabIndex = 2;
-            this.gbDetails.TabStop = false;
-            this.gbDetails.Text = "Please enter details";
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturn.Location = new System.Drawing.Point(186, 297);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(144, 43);
-            this.btnReturn.TabIndex = 4;
-            this.btnReturn.Text = "&Return";
-            this.btnReturn.UseVisualStyleBackColor = true;
-            // 
-            // txtBookID
-            // 
-            this.txtBookID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBookID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBookID.Location = new System.Drawing.Point(113, 33);
-            this.txtBookID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBookID.Name = "txtBookID";
-            this.txtBookID.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBookID.Size = new System.Drawing.Size(97, 26);
-            this.txtBookID.TabIndex = 1;
-            this.txtBookID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtBookID.Leave += new System.EventHandler(this.txtBookID_Leave);
-            // 
-            // txtStudentID
-            // 
-            this.txtStudentID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentID.Location = new System.Drawing.Point(362, 33);
-            this.txtStudentID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtStudentID.Name = "txtStudentID";
-            this.txtStudentID.Size = new System.Drawing.Size(97, 26);
-            this.txtStudentID.TabIndex = 2;
-            this.txtStudentID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtStudentID.Leave += new System.EventHandler(this.txtStudentID_Leave);
-            // 
-            // lblBookTitle
-            // 
-            this.lblBookTitle.AutoSize = true;
-            this.lblBookTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookTitle.Location = new System.Drawing.Point(17, 72);
-            this.lblBookTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBookTitle.Name = "lblBookTitle";
-            this.lblBookTitle.Size = new System.Drawing.Size(89, 20);
-            this.lblBookTitle.TabIndex = 6;
-            this.lblBookTitle.Text = "Book Title:";
-            // 
-            // lblStudentID
-            // 
-            this.lblStudentID.AutoSize = true;
-            this.lblStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudentID.Location = new System.Drawing.Point(247, 36);
-            this.lblStudentID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStudentID.Name = "lblStudentID";
-            this.lblStudentID.Size = new System.Drawing.Size(93, 20);
-            this.lblStudentID.TabIndex = 5;
-            this.lblStudentID.Text = "Student ID:";
-            // 
-            // lblStudentName
-            // 
-            this.lblStudentName.AutoSize = true;
-            this.lblStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudentName.Location = new System.Drawing.Point(17, 108);
-            this.lblStudentName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStudentName.Name = "lblStudentName";
-            this.lblStudentName.Size = new System.Drawing.Size(120, 20);
-            this.lblStudentName.TabIndex = 4;
-            this.lblStudentName.Text = "Student Name:";
-            // 
-            // lblDateOfIssue
-            // 
-            this.lblDateOfIssue.AutoSize = true;
-            this.lblDateOfIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateOfIssue.Location = new System.Drawing.Point(17, 180);
-            this.lblDateOfIssue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDateOfIssue.Name = "lblDateOfIssue";
-            this.lblDateOfIssue.Size = new System.Drawing.Size(114, 20);
-            this.lblDateOfIssue.TabIndex = 3;
-            this.lblDateOfIssue.Text = "Date of Issue:";
-            // 
-            // lblReturnDate
-            // 
-            this.lblReturnDate.AutoSize = true;
-            this.lblReturnDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReturnDate.Location = new System.Drawing.Point(17, 144);
-            this.lblReturnDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblReturnDate.Name = "lblReturnDate";
-            this.lblReturnDate.Size = new System.Drawing.Size(105, 20);
-            this.lblReturnDate.TabIndex = 2;
-            this.lblReturnDate.Text = "Return Date:";
-            // 
-            // lblBookID
-            // 
-            this.lblBookID.AutoSize = true;
-            this.lblBookID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookID.Location = new System.Drawing.Point(17, 36);
-            this.lblBookID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBookID.Name = "lblBookID";
-            this.lblBookID.Size = new System.Drawing.Size(74, 20);
-            this.lblBookID.TabIndex = 0;
-            this.lblBookID.Text = "Book ID:";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblTitle
             // 
@@ -289,22 +81,275 @@
             this.lblTitle.Text = "RETURN BOOK";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
+            // gbEnterDetails
+            // 
+            this.gbEnterDetails.Controls.Add(this.txtBookID);
+            this.gbEnterDetails.Controls.Add(this.txtStudentID);
+            this.gbEnterDetails.Controls.Add(this.lblStudentID);
+            this.gbEnterDetails.Controls.Add(this.lblBookID);
+            this.gbEnterDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbEnterDetails.Location = new System.Drawing.Point(24, 58);
+            this.gbEnterDetails.Name = "gbEnterDetails";
+            this.gbEnterDetails.Size = new System.Drawing.Size(200, 100);
+            this.gbEnterDetails.TabIndex = 0;
+            this.gbEnterDetails.TabStop = false;
+            this.gbEnterDetails.Text = "Enter Details";
+            // 
+            // gbOfficeUse
+            // 
+            this.gbOfficeUse.Controls.Add(this.txtLibrarianID);
+            this.gbOfficeUse.Controls.Add(this.txtIssueID);
+            this.gbOfficeUse.Controls.Add(this.lblLibrarianID);
+            this.gbOfficeUse.Controls.Add(this.lblIssueID);
+            this.gbOfficeUse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbOfficeUse.Location = new System.Drawing.Point(282, 58);
+            this.gbOfficeUse.Name = "gbOfficeUse";
+            this.gbOfficeUse.Size = new System.Drawing.Size(200, 100);
+            this.gbOfficeUse.TabIndex = 6;
+            this.gbOfficeUse.TabStop = false;
+            this.gbOfficeUse.Text = "Office Use Only";
+            // 
+            // lblBookID
+            // 
+            this.lblBookID.AutoSize = true;
+            this.lblBookID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookID.Location = new System.Drawing.Point(6, 67);
+            this.lblBookID.Name = "lblBookID";
+            this.lblBookID.Size = new System.Drawing.Size(66, 18);
+            this.lblBookID.TabIndex = 0;
+            this.lblBookID.Text = "Book ID:";
+            // 
+            // lblStudentID
+            // 
+            this.lblStudentID.AutoSize = true;
+            this.lblStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentID.Location = new System.Drawing.Point(6, 34);
+            this.lblStudentID.Name = "lblStudentID";
+            this.lblStudentID.Size = new System.Drawing.Size(80, 18);
+            this.lblStudentID.TabIndex = 1;
+            this.lblStudentID.Text = "Student ID:";
+            // 
+            // lblLibrarianID
+            // 
+            this.lblLibrarianID.AutoSize = true;
+            this.lblLibrarianID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLibrarianID.Location = new System.Drawing.Point(6, 67);
+            this.lblLibrarianID.Name = "lblLibrarianID";
+            this.lblLibrarianID.Size = new System.Drawing.Size(86, 18);
+            this.lblLibrarianID.TabIndex = 2;
+            this.lblLibrarianID.Text = "Librarian ID:";
+            // 
+            // lblIssueID
+            // 
+            this.lblIssueID.AutoSize = true;
+            this.lblIssueID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIssueID.Location = new System.Drawing.Point(6, 34);
+            this.lblIssueID.Name = "lblIssueID";
+            this.lblIssueID.Size = new System.Drawing.Size(65, 18);
+            this.lblIssueID.TabIndex = 3;
+            this.lblIssueID.Text = "Issue ID:";
+            // 
+            // txtStudentID
+            // 
+            this.txtStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStudentID.Location = new System.Drawing.Point(109, 31);
+            this.txtStudentID.Name = "txtStudentID";
+            this.txtStudentID.Size = new System.Drawing.Size(75, 24);
+            this.txtStudentID.TabIndex = 0;
+            this.txtStudentID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtBookID
+            // 
+            this.txtBookID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBookID.Location = new System.Drawing.Point(109, 64);
+            this.txtBookID.Name = "txtBookID";
+            this.txtBookID.Size = new System.Drawing.Size(75, 24);
+            this.txtBookID.TabIndex = 1;
+            this.txtBookID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtLibrarianID
+            // 
+            this.txtLibrarianID.Enabled = false;
+            this.txtLibrarianID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLibrarianID.Location = new System.Drawing.Point(110, 64);
+            this.txtLibrarianID.Name = "txtLibrarianID";
+            this.txtLibrarianID.Size = new System.Drawing.Size(75, 24);
+            this.txtLibrarianID.TabIndex = 7;
+            this.txtLibrarianID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtIssueID
+            // 
+            this.txtIssueID.Enabled = false;
+            this.txtIssueID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIssueID.Location = new System.Drawing.Point(110, 31);
+            this.txtIssueID.Name = "txtIssueID";
+            this.txtIssueID.Size = new System.Drawing.Size(75, 24);
+            this.txtIssueID.TabIndex = 8;
+            this.txtIssueID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnSearchRecords
+            // 
+            this.btnSearchRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchRecords.Location = new System.Drawing.Point(167, 165);
+            this.btnSearchRecords.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearchRecords.Name = "btnSearchRecords";
+            this.btnSearchRecords.Size = new System.Drawing.Size(172, 36);
+            this.btnSearchRecords.TabIndex = 1;
+            this.btnSearchRecords.Text = "&Search Records";
+            this.btnSearchRecords.UseVisualStyleBackColor = true;
+            this.btnSearchRecords.Click += new System.EventHandler(this.btnSearchRecords_Click);
+            // 
+            // gbRecordInfo
+            // 
+            this.gbRecordInfo.Controls.Add(this.lblDisplayDateIssued);
+            this.gbRecordInfo.Controls.Add(this.lblDisplayTitle);
+            this.gbRecordInfo.Controls.Add(this.lblDisplayName);
+            this.gbRecordInfo.Controls.Add(this.dateTimePickerReturnDate);
+            this.gbRecordInfo.Controls.Add(this.lblDateReturned);
+            this.gbRecordInfo.Controls.Add(this.lblDateOfIssue);
+            this.gbRecordInfo.Controls.Add(this.lblBookTitle);
+            this.gbRecordInfo.Controls.Add(this.lblStudentName);
+            this.gbRecordInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbRecordInfo.Location = new System.Drawing.Point(24, 174);
+            this.gbRecordInfo.Name = "gbRecordInfo";
+            this.gbRecordInfo.Size = new System.Drawing.Size(458, 228);
+            this.gbRecordInfo.TabIndex = 7;
+            this.gbRecordInfo.TabStop = false;
+            this.gbRecordInfo.Text = "Information";
+            this.gbRecordInfo.Visible = false;
+            // 
+            // lblStudentName
+            // 
+            this.lblStudentName.AutoSize = true;
+            this.lblStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentName.Location = new System.Drawing.Point(6, 43);
+            this.lblStudentName.Name = "lblStudentName";
+            this.lblStudentName.Size = new System.Drawing.Size(106, 18);
+            this.lblStudentName.TabIndex = 2;
+            this.lblStudentName.Text = "Student Name:";
+            // 
+            // lblBookTitle
+            // 
+            this.lblBookTitle.AutoSize = true;
+            this.lblBookTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookTitle.Location = new System.Drawing.Point(6, 82);
+            this.lblBookTitle.Name = "lblBookTitle";
+            this.lblBookTitle.Size = new System.Drawing.Size(79, 18);
+            this.lblBookTitle.TabIndex = 2;
+            this.lblBookTitle.Text = "Book Title:";
+            // 
+            // lblDateOfIssue
+            // 
+            this.lblDateOfIssue.AutoSize = true;
+            this.lblDateOfIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfIssue.Location = new System.Drawing.Point(6, 121);
+            this.lblDateOfIssue.Name = "lblDateOfIssue";
+            this.lblDateOfIssue.Size = new System.Drawing.Size(90, 18);
+            this.lblDateOfIssue.TabIndex = 3;
+            this.lblDateOfIssue.Text = "Date Issued:";
+            // 
+            // lblDateReturned
+            // 
+            this.lblDateReturned.AutoSize = true;
+            this.lblDateReturned.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateReturned.Location = new System.Drawing.Point(6, 160);
+            this.lblDateReturned.Name = "lblDateReturned";
+            this.lblDateReturned.Size = new System.Drawing.Size(107, 18);
+            this.lblDateReturned.TabIndex = 4;
+            this.lblDateReturned.Text = "Date Returned:";
+            // 
+            // dateTimePickerReturnDate
+            // 
+            this.dateTimePickerReturnDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerReturnDate.CustomFormat = "ddd d MMM yyyy";
+            this.dateTimePickerReturnDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dateTimePickerReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerReturnDate.Location = new System.Drawing.Point(140, 156);
+            this.dateTimePickerReturnDate.Name = "dateTimePickerReturnDate";
+            this.dateTimePickerReturnDate.Size = new System.Drawing.Size(284, 27);
+            this.dateTimePickerReturnDate.TabIndex = 5;
+            // 
+            // lblDisplayName
+            // 
+            this.lblDisplayName.AutoSize = true;
+            this.lblDisplayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayName.Location = new System.Drawing.Point(140, 43);
+            this.lblDisplayName.Name = "lblDisplayName";
+            this.lblDisplayName.Size = new System.Drawing.Size(94, 18);
+            this.lblDisplayName.TabIndex = 6;
+            this.lblDisplayName.Text = "display name";
+            this.lblDisplayName.Visible = false;
+            // 
+            // lblDisplayTitle
+            // 
+            this.lblDisplayTitle.AutoSize = true;
+            this.lblDisplayTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayTitle.Location = new System.Drawing.Point(140, 82);
+            this.lblDisplayTitle.Name = "lblDisplayTitle";
+            this.lblDisplayTitle.Size = new System.Drawing.Size(117, 18);
+            this.lblDisplayTitle.TabIndex = 7;
+            this.lblDisplayTitle.Text = "display book title";
+            this.lblDisplayTitle.Visible = false;
+            // 
+            // lblDisplayDateIssued
+            // 
+            this.lblDisplayDateIssued.AutoSize = true;
+            this.lblDisplayDateIssued.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayDateIssued.Location = new System.Drawing.Point(140, 121);
+            this.lblDisplayDateIssued.Name = "lblDisplayDateIssued";
+            this.lblDisplayDateIssued.Size = new System.Drawing.Size(132, 18);
+            this.lblDisplayDateIssued.TabIndex = 8;
+            this.lblDisplayDateIssued.Text = "display date issued";
+            this.lblDisplayDateIssued.Visible = false;
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.Location = new System.Drawing.Point(181, 409);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(135, 42);
+            this.btnReturn.TabIndex = 9;
+            this.btnReturn.Text = "&Return Book";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Visible = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnSearchAgain
+            // 
+            this.btnSearchAgain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchAgain.Location = new System.Drawing.Point(24, 410);
+            this.btnSearchAgain.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearchAgain.Name = "btnSearchAgain";
+            this.btnSearchAgain.Size = new System.Drawing.Size(135, 42);
+            this.btnSearchAgain.TabIndex = 10;
+            this.btnSearchAgain.Text = "&Search Again";
+            this.btnSearchAgain.UseVisualStyleBackColor = true;
+            this.btnSearchAgain.Click += new System.EventHandler(this.btnSearchAgain_Click);
+            // 
             // frmBookReturn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 464);
+            this.Controls.Add(this.btnSearchAgain);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.gbRecordInfo);
+            this.Controls.Add(this.btnSearchRecords);
+            this.Controls.Add(this.gbOfficeUse);
+            this.Controls.Add(this.gbEnterDetails);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.gbDetails);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmBookReturn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Book Return";
             this.Load += new System.EventHandler(this.frmBookReturn_Load);
-            this.gbOffice.ResumeLayout(false);
-            this.gbOffice.PerformLayout();
-            this.gbDetails.ResumeLayout(false);
-            this.gbDetails.PerformLayout();
+            this.gbEnterDetails.ResumeLayout(false);
+            this.gbEnterDetails.PerformLayout();
+            this.gbOfficeUse.ResumeLayout(false);
+            this.gbOfficeUse.PerformLayout();
+            this.gbRecordInfo.ResumeLayout(false);
+            this.gbRecordInfo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -312,24 +357,28 @@
         #endregion
 
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.TextBox txtLibrarianID;
-        private System.Windows.Forms.DateTimePicker dateTimePickerReturnDate;
-        private System.Windows.Forms.TextBox txtDateofIssue;
-        private System.Windows.Forms.TextBox txtStudentName;
-        private System.Windows.Forms.TextBox txtBookTitle;
-        private System.Windows.Forms.GroupBox gbOffice;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.GroupBox gbEnterDetails;
+        private System.Windows.Forms.Label lblStudentID;
+        private System.Windows.Forms.Label lblBookID;
+        private System.Windows.Forms.GroupBox gbOfficeUse;
         private System.Windows.Forms.Label lblLibrarianID;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.GroupBox gbDetails;
-        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Label lblIssueID;
         private System.Windows.Forms.TextBox txtBookID;
         private System.Windows.Forms.TextBox txtStudentID;
-        private System.Windows.Forms.Label lblBookTitle;
-        private System.Windows.Forms.Label lblStudentID;
-        private System.Windows.Forms.Label lblStudentName;
+        private System.Windows.Forms.TextBox txtLibrarianID;
+        private System.Windows.Forms.TextBox txtIssueID;
+        private System.Windows.Forms.Button btnSearchRecords;
+        private System.Windows.Forms.GroupBox gbRecordInfo;
+        private System.Windows.Forms.Label lblDisplayDateIssued;
+        private System.Windows.Forms.Label lblDisplayTitle;
+        private System.Windows.Forms.Label lblDisplayName;
+        private System.Windows.Forms.DateTimePicker dateTimePickerReturnDate;
+        private System.Windows.Forms.Label lblDateReturned;
         private System.Windows.Forms.Label lblDateOfIssue;
-        private System.Windows.Forms.Label lblReturnDate;
-        private System.Windows.Forms.Label lblBookID;
-        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblBookTitle;
+        private System.Windows.Forms.Label lblStudentName;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnSearchAgain;
     }
 }

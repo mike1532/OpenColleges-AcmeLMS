@@ -30,6 +30,10 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.gbDetails = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerDateOfIssue = new System.Windows.Forms.DateTimePicker();
+            this.txtReturnDate = new System.Windows.Forms.TextBox();
+            this.txtStudentName = new System.Windows.Forms.TextBox();
+            this.txtBookTitle = new System.Windows.Forms.TextBox();
             this.gbOffice = new System.Windows.Forms.GroupBox();
             this.lblLibrarianID = new System.Windows.Forms.Label();
             this.txtLibrarianID = new System.Windows.Forms.TextBox();
@@ -44,10 +48,6 @@
             this.lblReturnDate = new System.Windows.Forms.Label();
             this.lblBookID = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtBookTitle = new System.Windows.Forms.TextBox();
-            this.txtStudentName = new System.Windows.Forms.TextBox();
-            this.txtReturnDate = new System.Windows.Forms.TextBox();
-            this.dateTimePickerDateOfIssue = new System.Windows.Forms.DateTimePicker();
             this.gbDetails.SuspendLayout();
             this.gbOffice.SuspendLayout();
             this.SuspendLayout();
@@ -90,6 +90,45 @@
             this.gbDetails.TabIndex = 0;
             this.gbDetails.TabStop = false;
             this.gbDetails.Text = "Please enter details";
+            // 
+            // dateTimePickerDateOfIssue
+            // 
+            this.dateTimePickerDateOfIssue.CustomFormat = "ddd d MMM yyyy";
+            this.dateTimePickerDateOfIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDateOfIssue.Location = new System.Drawing.Point(206, 144);
+            this.dateTimePickerDateOfIssue.Name = "dateTimePickerDateOfIssue";
+            this.dateTimePickerDateOfIssue.Size = new System.Drawing.Size(253, 27);
+            this.dateTimePickerDateOfIssue.TabIndex = 16;
+            this.dateTimePickerDateOfIssue.Leave += new System.EventHandler(this.dateTimePickerDateOfIssue_Leave);
+            // 
+            // txtReturnDate
+            // 
+            this.txtReturnDate.Enabled = false;
+            this.txtReturnDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReturnDate.Location = new System.Drawing.Point(206, 177);
+            this.txtReturnDate.Name = "txtReturnDate";
+            this.txtReturnDate.Size = new System.Drawing.Size(253, 27);
+            this.txtReturnDate.TabIndex = 15;
+            this.txtReturnDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtStudentName
+            // 
+            this.txtStudentName.Enabled = false;
+            this.txtStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStudentName.Location = new System.Drawing.Point(206, 103);
+            this.txtStudentName.Name = "txtStudentName";
+            this.txtStudentName.Size = new System.Drawing.Size(253, 27);
+            this.txtStudentName.TabIndex = 14;
+            this.txtStudentName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtBookTitle
+            // 
+            this.txtBookTitle.Enabled = false;
+            this.txtBookTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBookTitle.Location = new System.Drawing.Point(114, 67);
+            this.txtBookTitle.Name = "txtBookTitle";
+            this.txtBookTitle.Size = new System.Drawing.Size(345, 27);
+            this.txtBookTitle.TabIndex = 13;
             // 
             // gbOffice
             // 
@@ -254,45 +293,6 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // txtBookTitle
-            // 
-            this.txtBookTitle.Enabled = false;
-            this.txtBookTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBookTitle.Location = new System.Drawing.Point(114, 67);
-            this.txtBookTitle.Name = "txtBookTitle";
-            this.txtBookTitle.Size = new System.Drawing.Size(345, 27);
-            this.txtBookTitle.TabIndex = 13;
-            // 
-            // txtStudentName
-            // 
-            this.txtStudentName.Enabled = false;
-            this.txtStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentName.Location = new System.Drawing.Point(206, 103);
-            this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.Size = new System.Drawing.Size(253, 27);
-            this.txtStudentName.TabIndex = 14;
-            this.txtStudentName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtReturnDate
-            // 
-            this.txtReturnDate.Enabled = false;
-            this.txtReturnDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReturnDate.Location = new System.Drawing.Point(206, 177);
-            this.txtReturnDate.Name = "txtReturnDate";
-            this.txtReturnDate.Size = new System.Drawing.Size(253, 27);
-            this.txtReturnDate.TabIndex = 15;
-            this.txtReturnDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // dateTimePickerDateOfIssue
-            // 
-            this.dateTimePickerDateOfIssue.CustomFormat = "ddd d MMM yyyy";
-            this.dateTimePickerDateOfIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDateOfIssue.Location = new System.Drawing.Point(206, 144);
-            this.dateTimePickerDateOfIssue.Name = "dateTimePickerDateOfIssue";
-            this.dateTimePickerDateOfIssue.Size = new System.Drawing.Size(253, 27);
-            this.dateTimePickerDateOfIssue.TabIndex = 16;
-            this.dateTimePickerDateOfIssue.Leave += new System.EventHandler(this.dateTimePickerDateOfIssue_Leave);
-            // 
             // frmBorrowBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -304,6 +304,7 @@
             this.Name = "frmBorrowBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = " Borrow Book";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBorrowBook_FormClosing);
             this.Load += new System.EventHandler(this.frmBorrowBook_Load);
             this.gbDetails.ResumeLayout(false);
             this.gbDetails.PerformLayout();
