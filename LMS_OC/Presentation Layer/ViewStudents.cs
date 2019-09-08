@@ -26,7 +26,7 @@ namespace LMS_OC.Presentation_Layer
         public void DisplayStudents()
         {           
             string selectQuery = "SELECT Student.StudentID AS \"Student ID\", Student.firstName AS \"First Name\", " +
-                "Student.lastName AS \"Last Name\" FROM Student";
+                "Student.lastName AS \"Last Name\", Student.fine AS \"Fine\" FROM Student";
 
             dataGridViewStudents.DataSource = ConnectionManager.GetTable(selectQuery);
         }

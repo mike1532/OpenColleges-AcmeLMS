@@ -9,5 +9,8 @@ namespace LMS_OC
     class GlobalVariable
     {
         public static string bookSearchCriteria;
+
+        public static int selectedIssueID;
+        
     }
 }

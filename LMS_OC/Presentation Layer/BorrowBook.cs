@@ -19,13 +19,13 @@ namespace LMS_OC.Presentation_Layer
         {
             InitializeComponent();
         }
-
-        
+               
 
         //events
         private void frmBorrowBook_Load(object sender, EventArgs e)
         {
             txtLibrarianID.Text = System.Environment.GetEnvironmentVariable("librarianID");
+            SetReturnDate();
         }
         private void txtBookID_Leave(object sender, EventArgs e)
         {
@@ -40,6 +40,12 @@ namespace LMS_OC.Presentation_Layer
         private void dateTimePickerDateOfIssue_Leave(object sender, EventArgs e)
         {
             SetReturnDate();
+        }
+        private void frmBorrowBook_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            txtBookID.Leave -= txtBookID_Leave;
+            txtStudentID.Leave -= txtStudentID_Leave;
+            dateTimePickerDateOfIssue.Leave -= dateTimePickerDateOfIssue_Leave;
         }
 
         //methods
@@ -169,7 +175,7 @@ namespace LMS_OC.Presentation_Layer
                 command.Parameters.AddWithValue("@IssueDate", dateTimePickerDateOfIssue.Value);
                 command.Parameters.AddWithValue("@ReturnDate", DateTime.Parse(txtReturnDate.Text));
                 command.Parameters.AddWithValue("@LibrarianID", int.Parse(txtLibrarianID.Text));
-                command.Parameters.AddWithValue("NewIssueID", SqlDbType.Int).Direction = ParameterDirection.Output;
+                command.Parameters.AddWithValue("@NewIssueID", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                 connection.Open();
                 command.Transaction = connection.BeginTransaction();
@@ -190,5 +196,7 @@ namespace LMS_OC.Presentation_Layer
                 MessageBox.Show("unsuccessful " + ex);
             }
         }
+
+       
     }
 }
